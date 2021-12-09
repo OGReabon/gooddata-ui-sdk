@@ -670,8 +670,9 @@ function getStackingConfiguration(
     let labelsConfig = {};
 
     if (isColumnChart(type)) {
-        const labelsVisible = chartConfig?.dataLabels?.visible;
-        labelsConfig = getLabelsVisibilityConfig(labelsVisible);
+        const totalLabelsVisible =
+            chartConfig?.totalLabels?.visible !== undefined ? chartConfig?.totalLabels?.visible : "auto";
+        labelsConfig = getLabelsVisibilityConfig(totalLabelsVisible);
     }
 
     const yAxis = yAxes.map(() => ({
@@ -680,7 +681,6 @@ function getStackingConfiguration(
             formatter: partial(stackLabelFormatter, chartConfig),
         },
     }));
-
     let connectNulls = {};
     if (stacking && isAreaChart(type)) {
         connectNulls = {

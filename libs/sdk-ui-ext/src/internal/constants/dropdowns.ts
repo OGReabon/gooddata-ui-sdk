@@ -58,6 +58,13 @@ export const dataLabelsDropdownItems: ITranslatedDropdownItem[] = [
     { title: "properties.canvas.dataLabels.hide", value: false },
 ];
 
+export const totalLabelsDropdownItems: ITranslatedDropdownItem[] = [
+    { title: "properties.canvas.totalLabels.auto", value: "auto" },
+    { type: "separator" },
+    { title: "properties.canvas.totalLabels.show", value: true },
+    { title: "properties.canvas.totalLabels.hide", value: false },
+];
+
 export const dataPointsDropdownLabels: ITranslatedDropdownItem[] = [
     { title: "properties.canvas.dataPoints.auto", value: "auto" },
     { type: "separator" },

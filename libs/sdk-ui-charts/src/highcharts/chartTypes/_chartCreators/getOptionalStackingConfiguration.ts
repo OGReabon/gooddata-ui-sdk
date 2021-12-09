@@ -194,6 +194,7 @@ export function getYAxisConfiguration(
     }
 
     const labelsVisible = chartConfig.dataLabels?.visible;
+    // const totalLabelsVisible = chartConfig.totalLabels?.visible;
     const { enabled: dataLabelEnabled } = getLabelsVisibilityConfig(labelsVisible);
 
     // enable by default or follow dataLabels.visible config
@@ -205,10 +206,24 @@ export function getYAxisConfiguration(
         return {
             ...axis,
             stackLabels: {
-                enabled: stackLabelEnabled,
+                enabled: false && stackLabelEnabled,
             },
         };
     });
+
+    // const yAxisWithStackLabel = yAxis.map((axis: IHighChartAxis, index: number) => {
+    //     // disable stack labels for primary Y axis when there is 'Stack to 100%' on
+    //     const stackLabelEnabled = (index !== 0 || !stackMeasuresToPercent) && stackLabelConfig;
+    //     if (!stackLabelEnabled) {
+    //         const totalLabelsVisible = stackLabelEnabled
+    //     }
+    //     return {
+    //         ...axis,
+    //         stackLabels: {
+    //             enabled: getLabelsVisibilityConfig(totalLabelsVisible)
+    //         }
+    //     }
+    // });
 
     return { yAxis: yAxisWithStackLabel };
 }

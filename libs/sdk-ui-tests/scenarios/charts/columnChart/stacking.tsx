@@ -67,9 +67,12 @@ export default scenariosFor<IColumnChartProps>("ColumnChart", ColumnChart)
             },
         },
     })
-    .addScenario("stack measures and dual axis", {
+    .addScenario("aaaa3a stack measures and dual axis", {
         ...ColumnChartWithArithmeticMeasuresAndViewBy,
         config: {
+            dataLabels: {
+                visible: true,
+            },
             stackMeasures: true,
             secondary_yaxis: {
                 measures: [measureLocalId(ReferenceLdmExt.CalculatedWonLostRatio)],

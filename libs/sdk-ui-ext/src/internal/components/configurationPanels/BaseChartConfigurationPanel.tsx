@@ -23,6 +23,7 @@ import { AXIS, BASE_CHART_AXIS_CONFIG, DUAL_AXES_SUPPORTED_CHARTS } from "../../
 import { bucketsIsEmpty, insightBuckets } from "@gooddata/sdk-model";
 import { countItemsOnAxes } from "../pluggableVisualizations/baseChart/insightIntrospection";
 import NameSubsection from "../configurationControls/axis/NameSubsection";
+import TotalLabelsControl from "../configurationControls/TotalLabelsControl";
 
 export default class BaseChartConfigurationPanel<
     T extends IConfigurationPanelContentProps = IConfigurationPanelContentProps,
@@ -44,6 +45,7 @@ export default class BaseChartConfigurationPanel<
                     pushData={pushData}
                     properties={properties}
                     isDisabled={controlsDisabled}
+                    showTotals={isTotalLabelsAllowed}
                 />
                 <CheckboxControl
                     valuePath="grid.enabled"

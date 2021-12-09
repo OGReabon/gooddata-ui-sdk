@@ -19,6 +19,11 @@ export const ColumnChartWithSingleMeasureViewByAndStackBy = {
     measures: [ReferenceLdm.Amount],
     viewBy: [ReferenceLdm.Product.Name],
     stackBy: ReferenceLdm.Region,
+    config: {
+        totalLabels: {
+            visible: true,
+        },
+    },
 };
 
 export const ColumnChartWithTwoMeasuresAndViewBy = {

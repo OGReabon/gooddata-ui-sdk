@@ -106,6 +106,11 @@ export interface IChartConfig {
     dataLabels?: IDataLabelsConfig;
 
     /**
+     * Customize visibility of the total labels. Total Labels typically appear within chart (e.g. next to a bar, above a column)
+     */
+    totalLabels?: IDataLabelsConfig;
+
+    /**
      * Customize visibility of the data points. Data points mark non-extrapolated data in "continuous" charts like line chart, area chart and combo chart made up of these two.
      * and
      */
@@ -257,6 +262,7 @@ export type ChartAlignTypes = "top" | "bottom" | "middle";
  */
 export interface IDataLabelsConfig {
     visible?: IDataLabelsVisible;
+    totalsVisible?: IDataLabelsVisible;
 }
 
 /**
